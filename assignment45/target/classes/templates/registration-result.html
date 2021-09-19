@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<style>
+    h1 {text-align: center;}
+    div.a {
+        border: 2px solid black;
+    }
+    p.c {
+        word-break: break-all;
+    }
+</style>
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="a">
+    <table align="center";>
+        <h1>Great Job !! You have successfully registered a candidate</h1>
+        <tr>
+            <td>Candidate Name:</td>
+            <td th:text="${candidateDetails.firstName} + ' ' + ${candidateDetails.lastName}"/>
+        </tr>
+        <tr>
+            <td>Date Of birth: </td>
+            <td th:text="${candidateDetails.dob}"/>
+        </tr>
+        <tr>
+            <td>Gender: </td>
+            <td th:text="${candidateDetails.gender}" />
+        </tr>
+        <tr>
+            <td>Interview date:</td>
+            <td th:text="${candidateDetails.interviewDate}" />
+        </tr>
+        <tr>
+            <td>CandidateDetails: </td>
+            <td><p class="c" th:text="${candidateDetails.candidateDetails}" /></td>
+        </tr>
+    </table>
+</div>
+
+
+
+<a href="/candidate-registration">Submit next candidate details</a>
+</body>
+</html>

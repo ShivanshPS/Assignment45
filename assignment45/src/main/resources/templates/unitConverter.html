@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<style>
+    h1 {text-align: center;}
+    div.a {
+        border: 2px solid black;
+    }
+</style>
+
+<body>
+<div class="a">
+<form action="#" th:action="@{/unitConverter/mile-to-km}" th:object="${unitDetails1}" method="post">
+
+        <table align="center";>
+            <h1>Mile to Kilometer converter</h1>
+            <tr>
+                <td>Mile <input type="number" th:field="*{unitMile}" required/></td> &nbsp;
+                <td>-  Kilometer</td>
+                <td><input type="number" th:field="*{unitKm}"/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Convert" /></td>
+            </tr>
+        </table>
+</form>
+
+<form action="#" th:action="@{/unitConverter/km-to-meter}" th:object="${unitDetails2}" method="post">
+        <table align="center";>
+            <h1>Kilometer to Meter converter</h1>
+            <tr>
+                <td>Kilometer <input type="number" th:field="*{unitKm}" required/></td> &nbsp;
+                <td>-  Meter</td>
+                <td><input type="number" th:field="*{unitMeter}"/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Convert" /></td>
+            </tr>
+        </table>
+
+</form>
+</div>
+</body>
+</html>
